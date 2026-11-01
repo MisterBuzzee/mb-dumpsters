@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "mb-dumpsters/data/settings.json",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "This file's JSON Schema (for editors)."
+    },
+    "searchSeconds": {
+      "description": "Search time",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 600
+    },
+    "cooldownMinutes": {
+      "description": "Cooldown: Minutes before a dumpster can be searched again.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1440
+    },
+    "minCash": {
+      "description": "Min cash",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100000
+    },
+    "maxCash": {
+      "description": "Max cash",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100000
+    },
+    "findChance": {
+      "description": "Find chance: Percent chance a search actually finds something.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "useStash": {
+      "description": "Use stash: Loot goes into a stash the player picks from instead of straight to inventory.",
+      "type": "boolean"
+    },
+    "stashSlots": {
+      "description": "Stash slots",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 200
+    },
+    "stashWeight": {
+      "description": "Stash weight",
+      "type": "integer",
+      "minimum": 1000,
+      "maximum": 10000000
+    },
+    "loot": {
+      "description": "Loot items",
+      "type": "array",
+      "maxItems": 50,
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Item",
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 48
+          },
+          "min": {
+            "description": "From",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "max": {
+            "description": "Up to",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "name",
+          "min",
+          "max"
+        ]
+      }
+    }
+  },
+  "required": [
+    "searchSeconds",
+    "cooldownMinutes",
+    "minCash",
+    "maxCash",
+    "findChance",
+    "useStash",
+    "stashSlots",
+    "stashWeight",
+    "loot"
+  ]
+}

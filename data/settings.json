@@ -1,0 +1,23 @@
+{
+  "$schema": "./schemas/settings.schema.json",
+  "searchSeconds": 8,
+  "cooldownMinutes": 10,
+  "minCash": 10,
+  "maxCash": 75,
+  "findChance": 45,
+  "useStash": true,
+  "stashSlots": 6,
+  "stashWeight": 50000,
+  "loot": [
+    {
+      "name": "water",
+      "min": 0,
+      "max": 2
+    },
+    {
+      "name": "burger",
+      "min": 0,
+      "max": 1
+    }
+  ]
+}

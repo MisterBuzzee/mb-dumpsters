@@ -13,6 +13,17 @@ points.addModel("dumpster", {
   canShow: () => cache.vehicle === false,
   onPressed: async (entity: number) => {
     const [x = 0, y = 0, z = 0] = GetEntityCoords(entity, false);
+    // Hide the target eye while the search runs.
+    try {
+      (exports as Record<string, { disableTargeting?: (s: boolean) => void }>)["ai-target"]?.disableTargeting?.(true);
+    } catch {
+      // ignore
+    }
     await callAction(EVENTS.search, [x, y, z], FAR);
+    try {
+      (exports as Record<string, { disableTargeting?: (s: boolean) => void }>)["ai-target"]?.disableTargeting?.(false);
+    } catch {
+      // ignore
+    }
   },
 });

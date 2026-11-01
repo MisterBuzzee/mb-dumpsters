@@ -1,9 +1,9 @@
 name 'mb-dumpsters'
-author 'TGIANN'
+author 'MISTERBUZZEE'
 version '0.1.0' -- x-release-please-version
 license 'GPL-3.0-only'
 description 'Search dumpsters for loot'
-repository 'https://github.com/aifivem/ai-dumpsters'
+repository 'https://github.com/misterbuzzee/mb-dumpsters'
 fx_version 'cerulean'
 game 'gta5'
 node_version '22'

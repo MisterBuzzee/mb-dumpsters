@@ -1,4 +1,4 @@
-import { cache, callAction, notify, Points } from "@aicore-fivem/lib/client";
+import { cache, callAction, notify, optionalExport, Points } from "@aicore-fivem/lib/client";
 import { Locale } from "common";
 import { DUMPSTER_MODELS, EVENTS } from "common/dumpsters";
 
@@ -14,16 +14,8 @@ points.addModel("dumpster", {
   onPressed: async (entity: number) => {
     const [x = 0, y = 0, z = 0] = GetEntityCoords(entity, false);
     // Hide the target eye while the search runs.
-    try {
-      (exports as Record<string, { disableTargeting?: (s: boolean) => void }>)["ai-target"]?.disableTargeting?.(true);
-    } catch {
-      // ignore
-    }
+    (optionalExport("ai-target") as { disableTargeting?: (s: boolean) => void } | null)?.disableTargeting?.(true);
     await callAction(EVENTS.search, [x, y, z], FAR);
-    try {
-      (exports as Record<string, { disableTargeting?: (s: boolean) => void }>)["ai-target"]?.disableTargeting?.(false);
-    } catch {
-      // ignore
-    }
+    (optionalExport("ai-target") as { disableTargeting?: (s: boolean) => void } | null)?.disableTargeting?.(false);
   },
 });

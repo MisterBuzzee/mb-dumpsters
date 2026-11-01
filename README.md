@@ -1,8 +1,7 @@
 # mb-dumpsters
 
 Dumpster search for AI Core: players search dumpsters for cash and loot items, with a server-timed progress bar, per-dumpster cooldown, and an optional stash pickup mode. Admins configure everything in the in-game admin panel.
-
-Part of [AI Core](https://aifivem.com): a TypeScript FiveM framework where every script is configured in one in-game admin panel, and ESX, QBCore and Qbox scripts run unchanged.
+[AI Core](https://aifivem.com): a TypeScript FiveM framework where every script is configured in one in-game admin panel, and ESX, QBCore and Qbox scripts run unchanged.
 
 ## Features
 
